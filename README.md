@@ -37,7 +37,7 @@ Packing List: https://github.com/JacinthaDev/personal-express
 
 Appointment Scheduler: https://github.com/JacinthaDev/personalfullstack1
 
-#### Backend Technologies
+## Backend Technologies
 MongoDB Atlas: https://www.mongodb.com/atlas/database
 
 
