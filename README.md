@@ -1,6 +1,8 @@
 # 📚 Library Catalog
 
+<img width="1278" alt="login" src="https://github.com/JacinthaDev/personalfullstack2/assets/129231721/bd1ba5ea-05c7-488a-908d-c902c60ddc8e">
 
+<img width="1288" alt="main" src="https://github.com/JacinthaDev/personalfullstack2/assets/129231721/540e4c6c-c0a7-462d-b2c1-77e41a51018e">
 
 # About this project
 This project models a library database where a user can enter a book title, author, status, and condition.
@@ -31,11 +33,9 @@ This project was challenging because I was working with various <select> element
 ## Examples:
 Take a look at similar projects!
 
-Packing List:
+Packing List: https://github.com/JacinthaDev/personal-express
 
-Library Catalog:
-
-Appointment Scheduler:
+Appointment Scheduler: https://github.com/JacinthaDev/personalfullstack1
 
 #### Backend Technologies
 MongoDB Atlas: https://www.mongodb.com/atlas/database
