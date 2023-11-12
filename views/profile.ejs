@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+    <title>Library Catalog</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ea19d3d339.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Library Catalog</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+
+        <div class="col-sm-7">
+          <h3>Books</h3>
+          <p>Enter a book into the library catalog. Book status and condition can be edited.</p>
+          <ul class="book-list">
+          <% for(var i=0; i<catalog.length; i++) {%>
+            <li class="book">
+              <span id="title"><%= catalog[i].title %></span>
+              <span id="author"><%= catalog[i].author %></span>
+
+              <!-- CONDITION EDITS -->
+
+              <% if (catalog[i].condition === 'Good') {%>
+                <form action="/catalog/condition" method="PUT" class="remove-default">
+                  <select name="condition" id="" class="select-status">
+                    <option value="" selected disabled>Good</option>
+                    <option value="OK">OK</option>
+                    <option value="Bad">Bad</option>
+                  </select>
+                </form>
+              <% } %> 
+
+              <% if (catalog[i].condition === 'OK') {%>
+                <form action="/catalog/condition" method="PUT" class="remove-default">
+                  <select name="condition" id="" class="select-status">
+                    <option value="" selected disabled>OK</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                  </select>
+                </form>
+              <% } %> 
+
+              <% if (catalog[i].condition === 'Bad') {%>
+                <form action="/catalog/condition" method="PUT" class="remove-default">
+                  <select name="condition" id="" class="select-status">
+                    <option value="" selected disabled>Bad</option>
+                    <option value="Good">Good</option>
+                    <option value="OK">OK</option>
+                  </select>
+                </form>
+              <% } %> 
+
+              <!-- STATUS EDITS -->
+
+              <% if (catalog[i].status === 'Checked Out') {%>
+                <form action="/catalog/status" method="PUT" class="remove-default">
+                  <select name="status" value ="" class="select-status">
+                    <option value="" selected disabled>Checked Out</option>
+                    <option value="On Shelf">On Shelf</option>
+                    <option value="Lost">Lost</option>
+                  </select>
+                </form>
+              <% } %> 
+
+              <% if (catalog[i].status === 'On Shelf') {%>
+                <form action="/catalog/status" method="PUT" class="remove-default">
+                  <select name="status" value="" class="select-status">
+                    <option value="" selected disabled>On Shelf</option>
+                    <option value="Checked Out">Checked Out</option>
+                    <option value="Lost">Lost</option>
+                  </select>
+              </form>
+              <% } %> 
+
+              <% if (catalog[i].status === 'Lost') {%>
+                <form action="/catalog/status" method="PUT" class="remove-default">
+                  <select name="status" value="" class="select-status">
+                    <option value="" selected disabled>Lost</option>
+                    <option value="Checked Out">Checked Out</option>
+                    <option value="On Shelf">On Shelf</option>
+                  </select>
+              </form>
+              <% } %> 
+
+              <span class="id hidden"><%= catalog[i]._id %></span>
+              <span><i class="fa-solid fa-trash" style="color: #000000;" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+          </ul>
+
+          <h2>Enter a book into the catalog</h2>
+        <% if (user.local.email) { %>
+          <form action="/catalog" method="POST">
+            <input type="text" placeholder="title" name="title" required>
+            <input type="text" placeholder="author" name="author" required>
+
+            <select name="condition" id="condition" required>
+              <option value="" selected disabled>Please choose a condition</option>
+              <option value="Good">Good</option>
+              <option value="OK">OK</option>
+              <option value="Bad">Bad</option>
+            </select>
+
+            <select name="status" id="status" required>
+              <option value="" selected disabled>Please choose a status</option>
+              <option value="Checked Out">Checked Out</option>
+              <option value="On Shelf">On Shelf</option>
+              <option value="Lost">Lost</option>
+            </select>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
