@@ -23,7 +23,7 @@
           <h3>Books</h3>
           <p>Enter a book into the library catalog. Book status and condition can be edited.</p>
           <ul class="book-list">
-          <% for(var i=0; i<catalog.length; i++) {%>
+          <% for(let i=0; i<catalog.length; i++) {%>
             <li class="book">
               <span id="title"><%= catalog[i].title %></span>
               <span id="author"><%= catalog[i].author %></span>
