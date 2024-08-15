@@ -24,7 +24,7 @@ This project models a library database where a user can enter a book title, auth
 ## How It's Made:
 Tech used: JavaScript, Node.js. Express.js, EJS, MongoDB, Passport.js
 
-This is a full stack message board that allows you to enter a book into the library catalog. The status and condition can be edited once a book is entered.
+This is a full stack app that allows you to enter a book into the library catalog. The status and condition can be edited once a book is entered.
 
 
 ## Lessons Learned:
